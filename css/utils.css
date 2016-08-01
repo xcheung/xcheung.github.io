@@ -1,0 +1,8 @@
+/**
+ * MarkView - a makrdown HTML viewer
+ * version: 2.5.46
+ * Copyright (c) 2014, Shane Weng
+ * All Rights Reserved.
+ * http://www.baiyunconsulting.com
+ */
+pre .line,pre code{font:400 14px "Courier New",Courier,Monospace;color:gray;display:block;padding-top:.5em}pre .line{float:left;margin:0 1em 0 -1em;border-right:1px solid;border-color:#ccc;text-align:right}pre .line span{display:block;padding:0 .5em 0 1.5em}pre .clear{display:block;clear:both}

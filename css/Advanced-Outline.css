@@ -1,0 +1,17 @@
+/**
+ * MarkView - a makrdown HTML viewer
+ * version: 2.5.46
+ * Copyright (c) 2014, Shane Weng
+ * All Rights Reserved.
+ * http://www.baiyunconsulting.com
+ */
+@import url("markview.css");
+@import url("markdown.css");
+@import url("4.css");
+@import url("5.css");
+#markdown-outline {
+  max-height: 80%;
+}
+#markdown-buttons-container {
+  display: none;
+}
