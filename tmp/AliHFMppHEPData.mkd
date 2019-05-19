@@ -1,44 +1,44 @@
-# Check of HEPData files
+# HFm in pp at 5.02 TeV
+
+- Check of HEPData files
 
 
-## Conclusion
+## Executive summary
 
-### Fig 5 vs. Fig 3
+### Fig 3
+- Compare with Fig 5
 - Central points are consistent
-  - << 1% deviation, could due to the precision
-- Statistic uncertainty
-  - Almost consistent
-  - But non-negliable deviation found in several pT bins
-- Systematic uncertaity
-  - Can not be compared directly
-  - The one in Fig 5 should smaller than Fig 3 but opposite trend is observed
+- Statistic uncertainty: non-negligible  deviation in several pT bins
 
-### Fig 6 vs. Fig 3
-- Deviation on systematic uncertainty found in the last pT bin
+### Fig 4a
+- Compare with Fig 5
+- Central points are consistent
+- Statistic uncertainty: < 1% deviation - could due to the precision
 
-### Fig 7 vs. Fig 5
-- Center points
-  - Deviation found in 6 < pT < 8 GeV/c
-- Statistic uncertainty
-  - Almost consistent, deviation is neglible
-- Systematic uncertainty
-  - Hard to say, the uncertainty on ratio should be larger than Fig 7
-  - But it is not always the case
+### Fig 4b
+- Compare with Fig 5
+- Central points: not all deviations are negligible
+- Statistic uncertainly: non-negligible deviation in several rapidity bins
 
-### Todo
-- Check consistency between Fig 3 and Fig 4
+### Fig 6
+- Compare with pp at 7 TeV
+- Central values and statistic uncertainty are consistent
+- Systematic uncertainty: observed deviation at the last pT bin
+
+### Fig 7
+- Ingredients are from Fig 5
+- Central points: inconsistent in 6 < pT < 8 GeV/c
+- Statistic uncertainty: deviation found in several pT regions
 
 ### Challenge
-- Systematic uncertainty can not be checked directly
+- Systematic uncertainty in Fig 3, Fig 4a and Fig 4b can not be checked directly
+- However, the value should smaller than the direct propagation using values in Fig 5
+- But this is not the case
 
 
-## Fig 5
+## Fig 3
 
-### Inputs
-- Five plots in Fig 5
-- Reference Fig 3
-
-### Central point
+### Fig 3 central point
 
 | pT (GeV/c)  | Fig 5       | Fig 3        | diff      | dev (%)|
 |:-----------:|------------:|-------------:|----------:|-------:|
@@ -56,70 +56,184 @@
 | 10.0 - 20.0 |   13211.857 |   13210.3335 |    1.5235 |  0.012 |
 
 - Numbers refer to central points
-- Bin width of orgin values are corrected (val * bW)
-- Fig 5: sum of central points in five rapidity bins
+- Bin width is considered in the rebin
 - Fig 3: central points in Fig 3
+- Fig 5: sum of central points in five rapidities
 - Diff: difference between Fig 3 and sum of five plots in Fig 5
 - Dev: |Fig 5 - Fig 3| / Fig 3
-- All deviations << 1%, neglible
+- All deviations << 1%, negligible
 
-### Statistic uncertainty
+### Fig 3 statistic uncertainty
 
-| pT (GeV/c)  | Fig 5       | Fig 3        | diff     | dev (%)|
-|:-----------:|------------:|-------------:|---------:|-------:|
-|  2.0 -  2.5 |    5457.178 |    5401.4500 |  55.7279 |  1.032 |
-|  2.5 -  3.0 |    4010.326 |    3988.7000 |  21.6260 |  0.542 |
-|  3.0 -  3.5 |    3032.476 |    3019.7350 |  12.7405 |  0.422 |
-|  3.5 -  4.0 |    2334.070 |    2328.3200 |   5.7504 |  0.247 |
-|  4.0 -  4.5 |    1794.180 |    1790.7150 |   3.4646 |  0.193 |
-|  4.5 -  5.0 |    1413.868 |    1412.0450 |   1.8229 |  0.129 |
-|  5.0 -  5.5 |    1164.506 |    1163.8550 |   0.6512 |  0.056 |
-|  5.5 -  6.0 |     930.033 |     929.3650 |   0.6682 |  0.072 |
-|  6.0 -  7.0 |     871.103 |     999.3869 | 128.2843 | 12.836 |
-|  7.0 -  8.0 |     573.666 |     567.3497 |   6.3159 |  1.113 |
-|  8.0 - 10.0 |     440.690 |     510.1101 |  69.4198 | 13.609 |
-| 10.0 - 20.0 |     338.571 |     364.8366 |  26.2655 |  7.199 |
+| pT (GeV/c)  | Fig 5    | Fig 3     | diff     | dev (%)|
+|:-----------:|---------:|----------:|---------:|-------:|
+|  2.0 -  2.5 | 5457.178 | 5401.4500 |  55.7279 |  1.032 |
+|  2.5 -  3.0 | 4010.326 | 3988.7000 |  21.6260 |  0.542 |
+|  3.0 -  3.5 | 3032.476 | 3019.7350 |  12.7405 |  0.422 |
+|  3.5 -  4.0 | 2334.070 | 2328.3200 |   5.7504 |  0.247 |
+|  4.0 -  4.5 | 1794.180 | 1790.7150 |   3.4646 |  0.193 |
+|  4.5 -  5.0 | 1413.868 | 1412.0450 |   1.8229 |  0.129 |
+|  5.0 -  5.5 | 1164.506 | 1163.8550 |   0.6512 |  0.056 |
+|  5.5 -  6.0 |  930.033 |  929.3650 |   0.6682 |  0.072 |
+|  6.0 -  7.0 |  871.103 |  999.3869 | 128.2843 | 12.836 |
+|  7.0 -  8.0 |  573.666 |  567.3497 |   6.3159 |  1.113 |
+|  8.0 - 10.0 |  440.690 |  510.1101 |  69.4198 | 13.609 |
+| 10.0 - 20.0 |  338.571 |  364.8366 |  26.2655 |  7.199 |
 
 - Numbers refer to statistic errors
-- Bin width of orgin values are corrected (val * bW)
-- Fig 5: qudratic sum of statistic errors in five rapidity bins
+- Bin width is considered in the rebin
 - Fig 3: statistic errors in Fig 3
+- Fig 5: quadratic sum of statistic errors in five rapidities
 - Diff: difference between Fig 3 and sum of five plots in Fig 5
 - Dev: |Fig 5 - Fig 3| / Fig 3
 - > 1% deviations found in a few pT bins
 
-### Systematic uncertainty
-| pT (GeV/c)  | Fig 5       | Fig 3        | diff       | dev (%)|
-|:-----------:|------------:|-------------:|-----------:|-------:|
-|  2.0 -  2.5 |   92319.378 |  172121.5000 | 79802.1218 | 46.364 |
-|  2.5 -  3.0 |   32316.460 |   65633.5000 | 33317.0399 | 50.762 |
-|  3.0 -  3.5 |   12080.725 |   27289.9500 | 15209.2246 | 55.732 |
-|  3.5 -  4.0 |    5302.263 |   12421.1000 |  7118.8373 | 57.312 |
-|  4.0 -  4.5 |    2655.044 |    6307.8500 |  3652.8063 | 57.909 |
-|  4.5 -  5.0 |    1469.005 |    3511.2350 |  2042.2297 | 58.163 |
-|  5.0 -  5.5 |     846.413 |    2132.1950 |  1285.7824 | 60.303 |
-|  5.5 -  6.0 |     509.972 |    1274.1600 |   764.1875 | 59.976 |
-|  6.0 -  7.0 |     535.050 |     942.7583 |   407.7083 | 43.246 |
-|  7.0 -  8.0 |     490.711 |     698.9137 |   208.2031 | 29.790 |
-|  8.0 - 10.0 |     351.695 |     452.9146 |   101.2195 | 22.348 |
-| 10.0 - 20.0 |     176.725 |     246.1565 |    69.4310 | 28.206 |
+### Fig 3 systematic uncertainty
 
-- Numbers refer to systmatic errors
-- Bin width of orgin values are corrected (val * bW)
-- Fig 5: qudratic sum of systematic errors in five rapidity bins
+| pT (GeV/c)  | Fig 5     | Fig 3       | diff       | dev (%)|
+|:-----------:|----------:|------------:|-----------:|-------:|
+|  2.0 -  2.5 | 92319.378 | 172121.5000 | 79802.1218 | 46.364 |
+|  2.5 -  3.0 | 32316.460 |  65633.5000 | 33317.0399 | 50.762 |
+|  3.0 -  3.5 | 12080.725 |  27289.9500 | 15209.2246 | 55.732 |
+|  3.5 -  4.0 |  5302.263 |  12421.1000 |  7118.8373 | 57.312 |
+|  4.0 -  4.5 |  2655.044 |   6307.8500 |  3652.8063 | 57.909 |
+|  4.5 -  5.0 |  1469.005 |   3511.2350 |  2042.2297 | 58.163 |
+|  5.0 -  5.5 |   846.413 |   2132.1950 |  1285.7824 | 60.303 |
+|  5.5 -  6.0 |   509.972 |   1274.1600 |   764.1875 | 59.976 |
+|  6.0 -  7.0 |   535.050 |    942.7583 |   407.7083 | 43.246 |
+|  7.0 -  8.0 |   490.711 |    698.9137 |   208.2031 | 29.790 |
+|  8.0 - 10.0 |   351.695 |    452.9146 |   101.2195 | 22.348 |
+| 10.0 - 20.0 |   176.725 |    246.1565 |    69.4310 | 28.206 |
+
+- Numbers refer to systematic errors
+- Bin width is considered in the rebin
 - Fig 3: systematic errors in Fig 3
+- Fig 5: quadratic sum of systematic errors in five rapidities
 - Diff: difference between Fig 3 and sum of five plots in Fig 5
 - Dev: |Fig 5 - Fig 3| / Fig 3
 - Systematic uncertainty is not propagated directly, but that of Fig 5 should larger than Fig 3
 
 
+## Fig 4a
+
+### Fig 4a central point
+
+| Rapidity  | Fig 5      | Fig 4a     | diff | dev (%) |
+|:---------:|-----------:|-----------:|-----:|--------:|
+| 2.5 - 2.8 | 1532997.45 | 1532994.00 | 3.45 |   0.000 |
+| 2.8 - 3.1 | 1196369.05 | 1196367.00 | 2.05 |   0.000 |
+| 3.1 - 3.4 | 1000599.00 | 1000599.00 | 0.00 |   0.000 |
+| 3.4 - 3.7 |  822614.74 |  822615.00 | 0.26 |   0.000 |
+| 3.7 - 4.0 |  691480.35 |  691479.00 | 1.35 |   0.000 |
+
+- Numbers refer to central points
+- Bin width is considered in the rebin
+- Fig 4a: central points in Fig 4a
+- Fig 5: rebinned central points in five rapidities
+- Diff: difference between Fig 4a and sum of five plots in Fig 5
+- Dev: |Fig 5 - Fig 4a| / Fig 4a
+- Center points are consistent
+
+### Fig 4a statistic uncertainty
+
+| Rapidity  | Fig 5     | Fig 4a  | diff    | dev (%) |
+|:---------:|----------:|--------:|--------:|--------:|
+| 2.5 - 2.8 | 4439.2491 | 4398.63 | 40.6191 | 0.92345 |
+| 2.8 - 3.1 | 3706.7043 | 3673.71 | 32.9943 | 0.89812 |
+| 3.1 - 3.4 | 3616.1093 | 3604.05 | 12.0593 | 0.33460 |
+| 3.4 - 3.7 | 3355.5906 | 3353.70 |  1.8906 | 0.05637 |
+| 3.7 - 4.0 | 3304.9104 | 3312.81 |  7.8996 | 0.23846 |
+
+- Numbers refer to statistic errors
+- Bin width is considered in the rebin
+- Fig 4a: statistic errors in Fig 4a
+- Fig 5: rebinned statistic errors in five rapidities
+- Diff: difference between Fig 4a and sum of five plots in Fig 5
+- Dev: |Fig 5 - Fig 4a| / Fig 4a
+- All deviations < 1%, negligible
+
+### Fig 4a systematic uncertainty
+
+| Rapidity  | Fig 5      | Fig 4a    | diff       | dev (%)  |
+|:---------:|-----------:|----------:|-----------:|---------:|
+| 2.5 - 2.8 | 73392.4194 | 133078.80 | 59686.3806 | 44.85040 |
+| 2.8 - 3.1 | 48037.0958 |  87264.30 | 39227.2042 | 44.95218 |
+| 3.1 - 3.4 | 34768.6270 |  61881.00 | 27112.3730 | 43.81373 |
+| 3.4 - 3.7 | 24684.1817 |  43513.80 | 18829.6183 | 43.27275 |
+| 3.7 - 4.0 | 15478.1478 |  26609.67 | 11131.5222 | 41.83262 |
+
+- Numbers refer to systematic errors
+- Bin width is considered in the rebin
+- Fig 4a: systematic errors in Fig 4a
+- Fig 5: rebinned systematic errors in five rapidities
+- Diff: difference between Fig 4a and sum of five plots in Fig 5
+- Dev: |Fig 5 - Fig 4a| / Fig 4a
+- Systematic uncertainty is not propagated directly, but that of Fig 5 should larger than Fig 4a
+
+
+## Fig 4b
+
+### Fig 4b central point
+
+| Rapidity  | Fig 5      | Fig 4b   | diff     | dev (%) |
+|:---------:|-----------:|---------:|---------:|--------:|
+| 2.5 - 2.8 | 23702.6375 | 23637.27 |  65.3675 | 0.27654 |
+| 2.8 - 3.1 | 18452.2655 | 18297.12 | 155.1455 | 0.84792 |
+| 3.1 - 3.4 | 12642.4940 | 12551.16 |  91.3340 | 0.72769 |
+| 3.4 - 3.7 |  7722.6303 |  7610.58 | 112.0503 | 1.47230 |
+| 3.7 - 4.0 |  4945.8578 |  4935.99 |   9.8678 | 0.19992 |
+
+- Numbers refer to central points
+- Bin width is considered in the rebin
+- Fig 4b: central points in Fig 4b
+- Fig 5: rebinned central points in five rapidities
+- Diff: difference between Fig 4b and sum of five plots in Fig 5
+- Dev: |Fig 5 - Fig 4b| / Fig 4b
+- Not all deviations are negligible
+
+### Fig 4b statistic uncertainty
+
+| Rapidity  | Fig 5    | Fig 4b  | diff    | dev (%)  |
+|:---------:|---------:|--------:|--------:|---------:|
+| 2.5 - 2.8 | 487.8940 |  513.73 | 25.8380 |  5.02947 |
+| 2.8 - 3.1 | 435.0485 |  431.15 |  3.9005 |  0.90468 |
+| 3.1 - 3.4 | 367.4800 |  364.76 |  2.7190 |  0.74542 |
+| 3.4 - 3.7 | 216.0042 |  279.02 | 63.0132 | 22.58396 |
+| 3.7 - 4.0 | 170.0690 |  219.21 | 49.1455 | 22.41889 |
+
+- Numbers refer to statistic errors
+- Bin width is considered in the rebin
+- Fig 4b: statistic errors in Fig 4b
+- Fig 5: rebinned statistic errors in five rapidities
+- Diff: difference between Fig 4a and sum of five plots in Fig 5
+- Dev: |Fig 5 - Fig 4b| / Fig 4b
+- Not all deviations are negligible
+
+### Fig 4b systematic uncertainty
+
+| Rapidity  | Fig 5    | Fig 4b | diff     | dev (%)  |
+|:---------:|---------:|-------:|---------:|---------:|
+| 2.5 - 2.8 | 440.6685 | 818.49 | 377.8185 | 46.16060 |
+| 2.8 - 3.1 | 326.1869 | 625.95 | 299.7601 | 47.88905 |
+| 3.1 - 3.4 | 247.4775 | 427.03 | 179.5515 | 42.04667 |
+| 3.4 - 3.7 | 154.6248 | 254.62 |  99.9960 | 39.27254 |
+| 3.7 - 4.0 |  99.8882 | 163.91 |  64.0231 | 39.05959 |
+
+- Numbers refer to systematic errors
+- Bin width is considered in the rebin
+- Fig 4b: systematic errors in Fig 4b
+- Fig 5: rebinned systematic errors in five rapidities
+- Diff: difference between Fig 4b and sum of five plots in Fig 5
+- Dev: |Fig 5 - Fig 4b| / Fig 4b
+- Systematic uncertainty is not propagated directly, but that of Fig 5 should larger than Fig 4a
+
+
 ## Fig 6
 
 ### Inputs
-- Numerator: HFm xsect in pp at 7 TeV: [Tabel 1 of ins1084981](https://www.hepdata.net/record/ins1084981)
-- Denominator: HFm xsect in pp at 5.02 TeV: Fig 3
+- HFm xsect in pp at 7 TeV: [Tabel 1 of ins1084981](https://www.hepdata.net/record/ins1084981)
 
-### Central point
+### Fig 6 central point
 
 | pT (GeV/c)  | 7 TeV        | 5.02 TeV     | Ratio   | Fig 6   | diff    |
 |:-----------:|-------------:|-------------:|--------:|--------:|--------:|
@@ -150,7 +264,7 @@
 - Diff: difference between the ratio and Fig 6
 - Results are consistent
 
-### Statistic uncertainty
+### Fig 6 statistic uncertainty
 
 | pT (GeV/c)  | 7 TeV     | 5.02 TeV  | Ratio   | Fig 6   | diff    |
 |:-----------:|----------:|----------:|--------:|--------:|--------:|
@@ -181,7 +295,7 @@
 - Diff: difference between the ratio and Fig 6
 - Results are consistent
 
-### Systematic uncertainty
+### Fig 6 systematic uncertainty
 
 | pT (GeV/c)  | 7 TeV      | 5.02 TeV   | Ratio   | Fig 6   | diff    |
 |:-----------:|-----------:|-----------:|--------:|--------:|--------:|
@@ -215,11 +329,7 @@
 
 ## Fig 7
 
-### Inputs
-- Numerator: HFm xsect in Fig 5a
-- Denominator: HFm xsect in Fig 5e
-
-### Central point
+### Fig 7 central point
 
 | pT (GeV/c)  | Fig 5a      | Fig 5e       | Ratio   | Fig 7   | diff    |
 |:-----------:|------------:|-------------:|--------:|--------:|--------:|
@@ -243,7 +353,7 @@
 - Diff: difference between the ratio and Fig 7
 - Results are inconsistent in 6 < pT < 8 GeV/c
 
-### Statistic uncertainty
+### Fig 7 statistic uncertainty
 
 | pT (GeV/c)  | Fig 5a    | Fig 5e    | Ratio   | Fig 7   | diff    |
 |:-----------:|----------:|----------:|--------:|--------:|--------:|
@@ -267,7 +377,7 @@
 - Diff: difference between the ratio and Fig 7
 - Results are almost consistent
 
-### Systematic uncertainty
+### Fig 7 systematic uncertainty
 
 | pT (GeV/c)  | Fig 5a     | Fig 5e     | Ratio   | Fig 7   | diff    |
 |:-----------:|-----------:|-----------:|--------:|--------:|--------:|
