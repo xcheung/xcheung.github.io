@@ -1,7 +1,7 @@
 # HFm in pp at 5.02 TeV
 
-- Check of HEPData files
-
+- Check HEPData files of [HFm in pp at 5.02 TeV](https://alice-publications.web.cern.ch/node/4120)
+- HFm xsect in pp at 7 TeV: [Tabel 1 of ins1084981](https://www.hepdata.net/record/ins1084981)
 
 ## Executive summary
 
@@ -36,9 +36,9 @@
 - But this is not the case
 
 
-## Fig 3
+## Results
 
-### Fig 3 central point
+### Fig 3: central value
 
 | pT (GeV/c)  | Fig 5       | Fig 3        | diff      | dev (%)|
 |:-----------:|------------:|-------------:|----------:|-------:|
@@ -63,7 +63,7 @@
 - Dev: |Fig 5 - Fig 3| / Fig 3
 - All deviations << 1%, negligible
 
-### Fig 3 statistic uncertainty
+### Fig 3: statistic uncertainty
 
 | pT (GeV/c)  | Fig 5    | Fig 3     | diff     | dev (%)|
 |:-----------:|---------:|----------:|---------:|-------:|
@@ -88,7 +88,7 @@
 - Dev: |Fig 5 - Fig 3| / Fig 3
 - > 1% deviations found in a few pT bins
 
-### Fig 3 systematic uncertainty
+### Fig 3: systematic uncertainty
 
 | pT (GeV/c)  | Fig 5     | Fig 3       | diff       | dev (%)|
 |:-----------:|----------:|------------:|-----------:|-------:|
@@ -113,10 +113,7 @@
 - Dev: |Fig 5 - Fig 3| / Fig 3
 - Systematic uncertainty is not propagated directly, but that of Fig 5 should larger than Fig 3
 
-
-## Fig 4a
-
-### Fig 4a central point
+### Fig 4a: central value
 
 | Rapidity  | Fig 5      | Fig 4a     | diff | dev (%) |
 |:---------:|-----------:|-----------:|-----:|--------:|
@@ -134,7 +131,7 @@
 - Dev: |Fig 5 - Fig 4a| / Fig 4a
 - Center points are consistent
 
-### Fig 4a statistic uncertainty
+### Fig 4a: statistic uncertainty
 
 | Rapidity  | Fig 5     | Fig 4a  | diff    | dev (%) |
 |:---------:|----------:|--------:|--------:|--------:|
@@ -152,7 +149,7 @@
 - Dev: |Fig 5 - Fig 4a| / Fig 4a
 - All deviations < 1%, negligible
 
-### Fig 4a systematic uncertainty
+### Fig 4a: systematic uncertainty
 
 | Rapidity  | Fig 5      | Fig 4a    | diff       | dev (%)  |
 |:---------:|-----------:|----------:|-----------:|---------:|
@@ -170,10 +167,7 @@
 - Dev: |Fig 5 - Fig 4a| / Fig 4a
 - Systematic uncertainty is not propagated directly, but that of Fig 5 should larger than Fig 4a
 
-
-## Fig 4b
-
-### Fig 4b central point
+### Fig 4b: central value
 
 | Rapidity  | Fig 5      | Fig 4b   | diff     | dev (%) |
 |:---------:|-----------:|---------:|---------:|--------:|
@@ -191,7 +185,7 @@
 - Dev: |Fig 5 - Fig 4b| / Fig 4b
 - Not all deviations are negligible
 
-### Fig 4b statistic uncertainty
+### Fig 4b: statistic uncertainty
 
 | Rapidity  | Fig 5    | Fig 4b  | diff    | dev (%)  |
 |:---------:|---------:|--------:|--------:|---------:|
@@ -209,7 +203,7 @@
 - Dev: |Fig 5 - Fig 4b| / Fig 4b
 - Not all deviations are negligible
 
-### Fig 4b systematic uncertainty
+### Fig 4b: systematic uncertainty
 
 | Rapidity  | Fig 5    | Fig 4b | diff     | dev (%)  |
 |:---------:|---------:|-------:|---------:|---------:|
@@ -227,13 +221,7 @@
 - Dev: |Fig 5 - Fig 4b| / Fig 4b
 - Systematic uncertainty is not propagated directly, but that of Fig 5 should larger than Fig 4a
 
-
-## Fig 6
-
-### Inputs
-- HFm xsect in pp at 7 TeV: [Tabel 1 of ins1084981](https://www.hepdata.net/record/ins1084981)
-
-### Fig 6 central point
+### Fig 6: central value
 
 | pT (GeV/c)  | 7 TeV        | 5.02 TeV     | Ratio   | Fig 6   | diff    |
 |:-----------:|-------------:|-------------:|--------:|--------:|--------:|
@@ -264,7 +252,7 @@
 - Diff: difference between the ratio and Fig 6
 - Results are consistent
 
-### Fig 6 statistic uncertainty
+### Fig 6: statistic uncertainty
 
 | pT (GeV/c)  | 7 TeV     | 5.02 TeV  | Ratio   | Fig 6   | diff    |
 |:-----------:|----------:|----------:|--------:|--------:|--------:|
@@ -295,7 +283,7 @@
 - Diff: difference between the ratio and Fig 6
 - Results are consistent
 
-### Fig 6 systematic uncertainty
+### Fig 6: systematic uncertainty
 
 | pT (GeV/c)  | 7 TeV      | 5.02 TeV   | Ratio   | Fig 6   | diff    |
 |:-----------:|-----------:|-----------:|--------:|--------:|--------:|
@@ -326,10 +314,7 @@
 - Diff: difference between the ratio and Fig 6
 - Results are consistent except the last pT bin
 
-
-## Fig 7
-
-### Fig 7 central point
+### Fig 7: central value
 
 | pT (GeV/c)  | Fig 5a      | Fig 5e       | Ratio   | Fig 7   | diff    |
 |:-----------:|------------:|-------------:|--------:|--------:|--------:|
@@ -353,7 +338,7 @@
 - Diff: difference between the ratio and Fig 7
 - Results are inconsistent in 6 < pT < 8 GeV/c
 
-### Fig 7 statistic uncertainty
+### Fig 7: statistic uncertainty
 
 | pT (GeV/c)  | Fig 5a    | Fig 5e    | Ratio   | Fig 7   | diff    |
 |:-----------:|----------:|----------:|--------:|--------:|--------:|
@@ -377,7 +362,7 @@
 - Diff: difference between the ratio and Fig 7
 - Results are almost consistent
 
-### Fig 7 systematic uncertainty
+### Fig 7: systematic uncertainty
 
 | pT (GeV/c)  | Fig 5a     | Fig 5e     | Ratio   | Fig 7   | diff    |
 |:-----------:|-----------:|-----------:|--------:|--------:|--------:|
