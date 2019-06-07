@@ -13116,7 +13116,30 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Check-the-descripancy-on-systematic-uncertainty-between-fig-3-and-5">Check the descripancy on systematic uncertainty between fig 3 and 5<a class="anchor-link" href="#Check-the-descripancy-on-systematic-uncertainty-between-fig-3-and-5">&#182;</a></h1><p>The variations of different uncertainty sources as a function of $p_{\rm T}$ in 2.5 &lt; $y$ &lt; 4 are shown in figure 40 in the <a href="https://alice-notes.web.cern.ch/node/671">analysis note</a>.
+<h1 id="Check-the-descripancy-on-systematic-uncertainty-between-fig-3-and-5">Check the descripancy on systematic uncertainty between fig 3 and 5<a class="anchor-link" href="#Check-the-descripancy-on-systematic-uncertainty-between-fig-3-and-5">&#182;</a></h1><h2 id="Version">Version<a class="anchor-link" href="#Version">&#182;</a></h2><ul>
+<li><p><a href="https://xcheung.github.io/sandbox/d20190602.html">V20190602</a></p>
+<ul>
+<li>Compare uncertainty propagation from Fig 5 to Fig 3in a give $p_{\rm T}$ bin</li>
+</ul>
+</li>
+<li><p><a href="https://xcheung.github.io/sandbox/d20190522.html">V20190522</a></p>
+<ul>
+<li>Newest inputs from Zuman</li>
+<li>The check presented here is based on this version</li>
+</ul>
+</li>
+<li><a href="https://xcheung.github.io/sandbox/d20190520.html">V20190520</a><ul>
+<li>Not fully consistent</li>
+<li>See executive summary there</li>
+</ul>
+</li>
+<li><a href="https://xcheung.github.io/sandbox/d20190519.html">V20190519</a><ul>
+<li>Corresponding to data files uploaded to the <a href="https://alice-publications.web.cern.ch/node/4120">papge review page</a></li>
+<li>See definition of tables also there</li>
+</ul>
+</li>
+</ul>
+<h2 id="Uncertainty-propagation">Uncertainty propagation<a class="anchor-link" href="#Uncertainty-propagation">&#182;</a></h2><p>The variations of different uncertainty sources as a function of $p_{\rm T}$ in 2.5 &lt; $y$ &lt; 4 are shown in figure 40 in the <a href="https://alice-notes.web.cern.ch/node/671">analysis note</a>.
 The trend should be similar in each sub-rapidity bin.</p>
 <p>Since I do not have all ingredients, two sources are chosen to test the uncertainty propagation:</p>
 <ul>
@@ -13133,71 +13156,54 @@ It means, similar as uncertainty on background subtraction, that the value of th
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[130]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">matplotlib.gridspec</span> <span class="k">as</span> <span class="nn">gridspec</span>
 
-<span class="kn">from</span> <span class="nn">math</span> <span class="k">import</span> <span class="n">sqrt</span>
+<span class="kn">from</span> <span class="nn">math</span>  <span class="k">import</span> <span class="n">sqrt</span>
+<span class="kn">from</span> <span class="nn">utils</span> <span class="k">import</span> <span class="n">get_data</span><span class="p">,</span> <span class="n">square</span>
+<span class="c1">###############################################################################</span>
 
-<span class="n">ax</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span> <span class="mf">2.25</span><span class="p">,</span> <span class="mf">2.75</span><span class="p">,</span> <span class="mf">3.25</span><span class="p">,</span> <span class="mf">3.75</span><span class="p">,</span> <span class="mf">4.25</span><span class="p">,</span> <span class="mf">4.75</span><span class="p">,</span> <span class="mf">5.25</span><span class="p">,</span> <span class="mf">5.75</span><span class="p">,</span> <span class="mf">6.5</span><span class="p">,</span> <span class="mf">7.5</span><span class="p">,</span> <span class="mf">9.0</span><span class="p">,</span> <span class="mf">15.0</span> <span class="p">])</span>
+<span class="n">ll</span> <span class="o">=</span> <span class="p">[</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">5.5</span><span class="p">,</span> <span class="mf">6.</span><span class="p">,</span> <span class="mf">7.</span><span class="p">,</span>  <span class="mf">8.</span><span class="p">,</span> <span class="mf">10.</span> <span class="p">]</span>
+<span class="n">lh</span> <span class="o">=</span> <span class="p">[</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">5.5</span><span class="p">,</span> <span class="mf">6.0</span><span class="p">,</span> <span class="mf">7.</span><span class="p">,</span> <span class="mf">8.</span><span class="p">,</span> <span class="mf">10.</span><span class="p">,</span> <span class="mf">20.</span> <span class="p">]</span>
 
-<span class="n">ar</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">172341.3528025</span><span class="p">,</span>
-               <span class="mf">65716.1982375</span><span class="p">,</span>
-               <span class="mf">27320.53149</span><span class="p">,</span>
-               <span class="mf">12432.379803</span><span class="p">,</span>
-               <span class="mf">6311.178383</span><span class="p">,</span>
-               <span class="mf">3512.307758</span><span class="p">,</span>
-               <span class="mf">2132.1962165</span><span class="p">,</span>
-               <span class="mf">1274.158048</span><span class="p">,</span>
-               <span class="mf">942.7594531610562</span><span class="p">,</span>
-               <span class="mf">698.9124876847158</span><span class="p">,</span>
-               <span class="mf">454.1049400298866</span><span class="p">,</span>
-               <span class="mf">237.83549423132817</span><span class="p">])</span>
+<span class="n">d5</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;u&#39;</span> <span class="p">:</span> <span class="p">{</span> <span class="s1">&#39;l&#39;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span> <span class="p">:</span> <span class="mi">11</span> <span class="p">},</span> <span class="s1">&#39;r&#39;</span> <span class="p">:</span> <span class="p">[</span> <span class="p">{</span> <span class="s1">&#39;l&#39;</span> <span class="p">:</span> <span class="mi">11</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span> <span class="p">:</span> <span class="mi">13</span> <span class="p">}</span> <span class="p">]</span> <span class="p">}</span>
+<span class="n">dc</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;u&#39;</span> <span class="p">:</span> <span class="p">{</span> <span class="s1">&#39;l&#39;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span> <span class="p">:</span> <span class="mi">11</span> <span class="p">},</span> <span class="s1">&#39;r&#39;</span> <span class="p">:</span> <span class="p">[</span> <span class="p">{</span> <span class="s1">&#39;l&#39;</span> <span class="p">:</span> <span class="mi">11</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span> <span class="p">:</span> <span class="mi">15</span> <span class="p">}</span> <span class="p">]</span> <span class="p">}</span>
+<span class="n">dd</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;u&#39;</span> <span class="p">:</span> <span class="p">{</span> <span class="s1">&#39;l&#39;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span> <span class="p">:</span> <span class="mi">10</span> <span class="p">},</span> <span class="s1">&#39;r&#39;</span> <span class="p">:</span> <span class="p">[</span> <span class="p">{</span> <span class="s1">&#39;l&#39;</span> <span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span> <span class="p">:</span> <span class="mi">12</span> <span class="p">},</span>  <span class="p">{</span> <span class="s1">&#39;l&#39;</span> <span class="p">:</span> <span class="mi">12</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span> <span class="p">:</span> <span class="mi">18</span> <span class="p">}]</span> <span class="p">}</span>
+<span class="n">de</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;u&#39;</span> <span class="p">:</span> <span class="p">{</span> <span class="s1">&#39;l&#39;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span> <span class="p">:</span> <span class="mi">10</span> <span class="p">},</span> <span class="s1">&#39;r&#39;</span> <span class="p">:</span> <span class="p">[</span> <span class="p">{</span> <span class="s1">&#39;l&#39;</span> <span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span> <span class="p">:</span> <span class="mi">12</span> <span class="p">},</span>  <span class="p">{</span> <span class="s1">&#39;l&#39;</span> <span class="p">:</span> <span class="mi">12</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span> <span class="p">:</span> <span class="mi">19</span> <span class="p">}]</span> <span class="p">}</span>
+<span class="n">d3</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;u&#39;</span> <span class="p">:</span> <span class="p">{</span> <span class="s1">&#39;l&#39;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span> <span class="p">:</span>  <span class="mi">8</span> <span class="p">},</span> <span class="s1">&#39;r&#39;</span> <span class="p">:</span> <span class="p">[</span> <span class="p">{</span> <span class="s1">&#39;l&#39;</span> <span class="p">:</span>  <span class="mi">8</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span> <span class="p">:</span> <span class="mi">10</span> <span class="p">},</span>  <span class="p">{</span> <span class="s1">&#39;l&#39;</span> <span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span> <span class="p">:</span> <span class="mi">12</span> <span class="p">},</span>
+                                            <span class="p">{</span> <span class="s1">&#39;l&#39;</span> <span class="p">:</span> <span class="mi">12</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span> <span class="p">:</span> <span class="mi">16</span> <span class="p">},</span>  <span class="p">{</span> <span class="s1">&#39;l&#39;</span> <span class="p">:</span> <span class="mi">16</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span> <span class="p">:</span> <span class="mi">26</span> <span class="p">}</span> <span class="p">]</span> <span class="p">}</span>
+<span class="c1">###############################################################################</span>
 
-<span class="n">aq</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">92319.33429979942</span><span class="p">,</span>
-               <span class="mf">32316.479558631378</span><span class="p">,</span>
-               <span class="mf">12080.714982229747</span><span class="p">,</span>
-               <span class="mf">5302.263996873609</span><span class="p">,</span>
-               <span class="mf">2655.042682781574</span><span class="p">,</span>
-               <span class="mf">1469.0045771847215</span><span class="p">,</span>
-               <span class="mf">846.4134481547596</span><span class="p">,</span>
-               <span class="mf">509.972379607112</span><span class="p">,</span>
-               <span class="mf">535.0504171121503</span><span class="p">,</span>
-               <span class="mf">490.7106608049066</span><span class="p">,</span>
-               <span class="mf">351.2282376726789</span><span class="p">,</span>
-               <span class="mf">176.7275560949601</span><span class="p">])</span>
+<span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">l3</span> <span class="o">=</span> <span class="n">get_data</span><span class="p">(</span><span class="s1">&#39;Fig3&#39;</span><span class="p">,</span>  <span class="n">d3</span><span class="p">)</span>
+<span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">la</span> <span class="o">=</span> <span class="n">get_data</span><span class="p">(</span><span class="s1">&#39;Fig5a&#39;</span><span class="p">,</span> <span class="n">d5</span><span class="p">)</span>
+<span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">lb</span> <span class="o">=</span> <span class="n">get_data</span><span class="p">(</span><span class="s1">&#39;Fig5b&#39;</span><span class="p">,</span> <span class="n">d5</span><span class="p">)</span>
+<span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">lc</span> <span class="o">=</span> <span class="n">get_data</span><span class="p">(</span><span class="s1">&#39;Fig5c&#39;</span><span class="p">,</span> <span class="n">dc</span><span class="p">)</span>
+<span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">ld</span> <span class="o">=</span> <span class="n">get_data</span><span class="p">(</span><span class="s1">&#39;Fig5d&#39;</span><span class="p">,</span> <span class="n">dd</span><span class="p">)</span>
+<span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">le</span> <span class="o">=</span> <span class="n">get_data</span><span class="p">(</span><span class="s1">&#39;Fig5e&#39;</span><span class="p">,</span> <span class="n">de</span><span class="p">)</span>
+<span class="c1">###############################################################################</span>
 
-<span class="n">al</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">183500.8455395</span><span class="p">,</span>
-               <span class="mf">64280.146905500005</span><span class="p">,</span>
-               <span class="mf">24373.010702500003</span><span class="p">,</span>
-               <span class="mf">10672.7453415</span><span class="p">,</span>
-               <span class="mf">5353.0628465</span><span class="p">,</span>
-               <span class="mf">2972.8994755000003</span><span class="p">,</span>
-               <span class="mf">1685.444023</span><span class="p">,</span>
-               <span class="mf">1020.2207484999999</span><span class="p">,</span>
-               <span class="mf">1068.9394929999999</span><span class="p">,</span>
-               <span class="mf">985.525707</span><span class="p">,</span>
-               <span class="mf">717.3309394188179</span><span class="p">,</span>
-               <span class="mf">339.2069457194166</span><span class="p">])</span>
+<span class="c1"># x-axis</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span> <span class="mf">0.5</span><span class="o">*</span><span class="p">(</span><span class="n">l</span><span class="o">+</span><span class="n">h</span><span class="p">)</span> <span class="k">for</span> <span class="n">l</span><span class="p">,</span> <span class="n">h</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">ll</span><span class="p">,</span><span class="n">lh</span><span class="p">)</span> <span class="p">])</span>
+
+<span class="c1"># Systematic uncertainty in Fig 3</span>
+<span class="n">ar</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">l3</span><span class="p">)</span>
+
+<span class="c1"># Systematic uncertainty from Fig 5 propagated linearly</span>
+<span class="n">al</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span> <span class="nb">sum</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">la</span><span class="p">,</span><span class="n">lb</span><span class="p">,</span><span class="n">lc</span><span class="p">,</span><span class="n">ld</span><span class="p">,</span><span class="n">le</span><span class="p">)</span> <span class="p">])</span>
+
+<span class="c1"># Systematic uncertainty from Fig 5 propagated quandratically</span>
+<span class="n">aq</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span> <span class="n">sqrt</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">square</span><span class="p">(</span><span class="n">x</span><span class="p">)))</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">la</span><span class="p">,</span><span class="n">lb</span><span class="p">,</span><span class="n">lc</span><span class="p">,</span><span class="n">ld</span><span class="p">,</span><span class="n">le</span><span class="p">)</span> <span class="p">])</span>
+<span class="c1">###############################################################################</span>
 
 <span class="n">dr</span> <span class="o">=</span> <span class="mf">1.</span> <span class="o">/</span> <span class="n">sqrt</span><span class="p">(</span><span class="mf">5.</span><span class="p">)</span>
 <span class="n">lx</span><span class="p">,</span> <span class="n">ly</span> <span class="o">=</span> <span class="p">[</span><span class="mf">2.</span><span class="p">,</span> <span class="mi">16</span><span class="p">],</span> <span class="p">[</span><span class="n">dr</span><span class="p">,</span> <span class="n">dr</span><span class="p">]</span>
-</pre></div>
+<span class="c1">###############################################################################</span>
 
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[132]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span><span class="n">tight_layout</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span><span class="n">tight_layout</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">gs</span>  <span class="o">=</span> <span class="n">gridspec</span><span class="o">.</span><span class="n">GridSpec</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 
 <span class="n">pad</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="n">gs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
@@ -13220,7 +13226,6 @@ It means, similar as uncertainty on background subtraction, that the value of th
 <span class="n">pad</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">al</span> <span class="o">/</span> <span class="n">aq</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">)</span>
 
 <span class="n">fig</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.05</span><span class="p">,</span> <span class="s1">&#39;Left: ratio of uncertainties between Fig 3 and 5. Right: uncertainty ratio in Fig 5&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mf">15.</span><span class="p">)</span>
-
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 
