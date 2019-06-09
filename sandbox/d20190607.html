@@ -13443,6 +13443,56 @@ The values are around 2 and almost independent on $p_{\rm T}$.
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Extension">Extension<a class="anchor-link" href="#Extension">&#182;</a></h2><p>For the uncertainties, we will talk about the <strong>absolute value</strong>.</p>
+<h3 id="Uncertainty-on-background-subtraction-($\mu\leftarrow\pi$-as-an-example)">Uncertainty on background subtraction ($\mu\leftarrow\pi$ as an example)<a class="anchor-link" href="#Uncertainty-on-background-subtraction-($\mu\leftarrow\pi$-as-an-example)">&#182;</a></h3><p>I take one of the sources as an example (eg $\mu\leftarrow\pi$), other sources should be similar. The following is the principle of how to play the value the uncertainty for this given uncertainty source. In the practice, you may implement it differently, but they should be equivalent, otherwise there is a mistake.</p>
+<p>For the central points, they are played with the following steps:</p>
+<ul>
+<li>At the end, the background is represented by a $p_{\rm T}$, $y$ 2D distribution</li>
+<li>Let us concentrate on a given $p_{\rm T}$ bin (the same as the following), one can slice this 2D distribution in the $i$th sub-rapidity to get the value in this given $p_{\rm T}$ interval $N_{i}^{\rm bkg}$, or to integral the 2D distribution over the total rapidity  and obtain the value $N^{\rm bkg}$</li>
+<li>Even the background subtraction in sub-rapidities and the total rapidity are applied independently, however, the they should satisfy the relation of
+$$N^{\rm bkg} = \sum_{i}N_{i}^{\rm bkg}$$</li>
+</ul>
+<p>For the uncertainties (<strong>the absolute value, same as the following</strong>), if we denote the value in the $i$the sub-rapidity bin as $\sigma_{i}^{\rm bkg}$ and in the total rapidity as $\sigma^{\rm bkg}$, they should also satisfy the relation of
+$$\sigma^{\rm bkg} = \sum_{i}\sigma_{i}^{\rm bkg}$$
+as a nature result one should obtain from slicing or integration the 2D background distribution. And this relation should keep independent on the efficiency correction or other background sources.</p>
+<p><strong>What is very important is that $\sigma^{\rm bkg}$ and $\sigma_{i}^{\rm bkg}$ are also the uncertainties on the final results. Since they are the absolute values!</strong></p>
+<h3 id="Combine-background-subtraction-uncertainties-on-$\mu\leftarrow\pi$-and-$\mu\leftarrow-K$">Combine background subtraction uncertainties on $\mu\leftarrow\pi$ and $\mu\leftarrow K$<a class="anchor-link" href="#Combine-background-subtraction-uncertainties-on-$\mu\leftarrow\pi$-and-$\mu\leftarrow-K$">&#182;</a></h3><p>First of all, the notations $\sigma_{i}^{\mu\leftarrow\pi / {\rm K}}$ and $\sigma^{\mu\leftarrow\pi / K}$ give uncertainties in sub-rapidities and the total rapidity for the corresponding source. Since I do not know how these two uncertainties are combined, I can test the following two hypotheses.</p>
+<h4 id="Linear-sum">Linear sum<a class="anchor-link" href="#Linear-sum">&#182;</a></h4><p>Uncertainty in the $i$th sub-rapidity is
+$$\sigma_{i}^{\rm bkg} = \sigma_{i}^{\mu\leftarrow\pi} + \sigma_{i}^{\mu\leftarrow{\rm K}}$$
+and in the total rapidity is
+$$\sigma^{\rm bkg} = \sigma^{\mu\leftarrow\pi} + \sigma^{\mu\leftarrow{\rm K}}$$
+To make a ratio between them, one can found
+$$
+R = \frac{\sum_{i}\sigma_{i}^{\rm bkg}}{\sigma^{\rm bkg}}
+~ = \frac{\sum_{i}(\sigma_{i}^{\mu\leftarrow\pi} + \sigma_{i}^{\mu\leftarrow{\rm K}})}{\sum_{i}\sigma_{i}^{\mu\leftarrow\pi} + \sum_{i}\sigma_{i}^{\mu\leftarrow K}}
+$$
+For sure, $\sigma_{i}^{\mu\leftarrow\pi}$ and $\sum_{i}\sigma_{i}^{\mu\leftarrow{\rm K}}$ should <strong>NOT</strong> be the same, we introduce the following relation:
+$$\sigma_{i}^{\mu\leftarrow\pi} = \alpha\sigma_{i}^{\mu\leftarrow\pi} = \alpha\sigma_{i}$$
+where $\alpha$ is a constant in a given $p_{\rm T}$ bin and independent on rapidity, then one can get
+$$R = 1$$</p>
+<h4 id="Quadratic-sum">Quadratic sum<a class="anchor-link" href="#Quadratic-sum">&#182;</a></h4><p>In case of the quadratic sum, we have
+$$\sigma_{i}^{\rm bkg} = \sqrt{(\sigma_{i}^{\mu\leftarrow\pi})^{2} + (\sigma_{i}^{\mu\leftarrow K})^{2}}$$
+and
+$$\sigma^{\rm bkg} = \sqrt{(\sigma^{\mu\leftarrow\pi})^{2} + (\sigma^{\mu\leftarrow{\rm K}})^{2}}$$
+By repeat the same calculation, one can still get
+$$R = 1$$</p>
+<h4 id="Discussion">Discussion<a class="anchor-link" href="#Discussion">&#182;</a></h4><p>Even I do not have the individual uncertainty source on hand and event do not know how you combined the uncertainties. With two hypotheses, I got the same conclusion: $R=1$.
+The only assumption I used is $\alpha$ independent on rapidity. However, in the reality we know that $\alpha\simeq 1$. This assumption will not destroy the conclusion.
+Since uncertainty on $\mu\leftarrow\pi$ and $\mu\leftarrow{\rm K}$ are dominant at low-$p_{\rm T}$, what we expect to see $R=1$ at $p_{\rm T}\simeq 2$ GeV/$c$.</p>
+<h3 id="Uncertainty-on-detector-response">Uncertainty on detector response<a class="anchor-link" href="#Uncertainty-on-detector-response">&#182;</a></h3><p>In a given $p_{\rm T}$ bin, the <strong>relative uncertainty</strong> on detector response is independent on rapidity, we denote is as $\kappa$.
+Then the <strong>absolute uncertainty</strong> in the $i$th sub-rapidity and the total rapidity are $\kappa N_{i}$ and $\kappa N$, where $N_{i}$ and $N$ are the values of central data points in the $i$th sub-rapidity and the total rapidity, they has the relation of
+$$N = \sum_{i}N_{i}$$
+To calculate the $R$ of this uncertainty source, one can easily found it is unity.</p>
+<h3 id="Combined-uncertainty">Combined uncertainty<a class="anchor-link" href="#Combined-uncertainty">&#182;</a></h3><p>In fig 40 of the analysis note, we know that uncertainty on background subtraction is dominant at low-$p_{\rm T}$ ($\simeq 2$ GeV/$c$) and uncertainty on detector response is dominant at high-$p_{\rm T}$ ($\simeq 6$ GeV/$c$).
+The $R$ as a function of $p_{\rm T}$ is shown as the blue points in the left figure. The expected trend is the $R$ should close to unity at $p_{\rm T} = 2$ and 6 GeV/$c$, but may deviate in between. <strong>But this is NOT the case.</strong></p>
+<h3 id="All-in-all-and-at-final">All in all and at final<a class="anchor-link" href="#All-in-all-and-at-final">&#182;</a></h3><p>Zuman, do you know what you should check?</p>
+
+</div>
+</div>
+</div>
     </div>
   </div>
 </body>
