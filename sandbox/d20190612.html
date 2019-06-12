@@ -13677,9 +13677,9 @@ div#notebook {
 <li><strong>sysd:</strong> $|{\rm sysc} - {\rm sys}| / {\rm sys}$ <strong>in percentage</strong></li>
 <li><strong>pi:</strong> systematic on $\mu\leftarrow\pi$ subtraction</li>
 <li><strong>K:</strong> systematic on $\mu\leftarrow{\rm K}$ subtraction</li>
-<li><strong>Sec:</strong> systematic on secondary muon subtraction</li>
-<li><strong>Jpsi:</strong> systematic on $\mu\leftarrow{\rm J/}\psi$ muon subtraction</li>
-<li><strong>W:</strong> systematic on $\mu\leftarrow{\rm W}$ muon subtraction</li>
+<li><strong>Sec:</strong> systematic on secondary subtraction</li>
+<li><strong>Jpsi:</strong> systematic on $\mu\leftarrow{\rm J/}\psi$ subtraction</li>
+<li><strong>W:</strong> systematic on $\mu\leftarrow{\rm W}$ subtraction</li>
 <li><strong>DR:</strong> systematic uncertainty on detector response</li>
 <li><strong>Mis:</strong> systematic on misalignment (track resolution)</li>
 </ul>
@@ -13695,8 +13695,8 @@ div#notebook {
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">utils</span> <span class="k">import</span> <span class="n">get_data</span>
 
 <span class="n">lsx</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;low&#39;</span><span class="p">,</span> <span class="s1">&#39;high&#39;</span>  <span class="p">]</span>
-<span class="n">lsv</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="s1">&#39;sys&#39;</span><span class="p">,</span> <span class="s1">&#39;sysc&#39;</span><span class="p">,</span> <span class="s1">&#39;sysd&#39;</span> <span class="p">]</span>
-<span class="n">lse</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;pi&#39;</span><span class="p">,</span> <span class="s1">&#39;K&#39;</span><span class="p">,</span> <span class="s1">&#39;Sec&#39;</span><span class="p">,</span> <span class="s1">&#39;Jpsi&#39;</span><span class="p">,</span> <span class="s1">&#39;W&#39;</span><span class="p">,</span> <span class="s1">&#39;DR&#39;</span><span class="p">,</span> <span class="s1">&#39;Mis&#39;</span> <span class="p">]</span>
+<span class="n">lsv</span> <span class="o">=</span> <span class="n">lsx</span> <span class="o">+</span> <span class="p">[</span> <span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="s1">&#39;sys&#39;</span><span class="p">,</span> <span class="s1">&#39;sysc&#39;</span><span class="p">,</span> <span class="s1">&#39;sysd&#39;</span> <span class="p">]</span>
+<span class="n">lse</span> <span class="o">=</span> <span class="n">lsx</span> <span class="o">+</span> <span class="p">[</span> <span class="s1">&#39;pi&#39;</span><span class="p">,</span> <span class="s1">&#39;K&#39;</span><span class="p">,</span> <span class="s1">&#39;Sec&#39;</span><span class="p">,</span> <span class="s1">&#39;Jpsi&#39;</span><span class="p">,</span> <span class="s1">&#39;W&#39;</span><span class="p">,</span> <span class="s1">&#39;DR&#39;</span><span class="p">,</span> <span class="s1">&#39;Mis&#39;</span> <span class="p">]</span>
 
 <span class="n">lsf</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;Fig3&#39;</span> <span class="p">]</span> <span class="o">+</span> <span class="p">[</span> <span class="s1">&#39;Fig5</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">s</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">chr</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">97</span><span class="p">,</span> <span class="mi">102</span><span class="p">)))</span> <span class="p">]</span>
 <span class="n">ldf</span> <span class="o">=</span> <span class="p">[</span> <span class="n">get_data</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="n">bFull</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">lsf</span> <span class="p">]</span>
@@ -13720,7 +13720,7 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ddf</span><span class="p">[</span><span class="s1">&#39;Fig3&#39;</span><span class="p">][</span><span class="n">lsx</span> <span class="o">+</span> <span class="n">lsv</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ddf</span><span class="p">[</span><span class="s1">&#39;Fig3&#39;</span><span class="p">][</span><span class="n">lsv</span><span class="p">]</span>
 </pre></div>
 
     </div>
@@ -14015,7 +14015,7 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ddf</span><span class="p">[</span><span class="s1">&#39;Fig3&#39;</span><span class="p">][</span><span class="n">lsx</span> <span class="o">+</span> <span class="n">lse</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ddf</span><span class="p">[</span><span class="s1">&#39;Fig3&#39;</span><span class="p">][</span><span class="n">lse</span><span class="p">]</span>
 </pre></div>
 
     </div>
@@ -14398,7 +14398,7 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ddf</span><span class="p">[</span><span class="s1">&#39;Fig5a&#39;</span><span class="p">][</span><span class="n">lsx</span> <span class="o">+</span> <span class="n">lsv</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ddf</span><span class="p">[</span><span class="s1">&#39;Fig5a&#39;</span><span class="p">][</span><span class="n">lsv</span><span class="p">]</span>
 </pre></div>
 
     </div>
@@ -14576,7 +14576,7 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ddf</span><span class="p">[</span><span class="s1">&#39;Fig5a&#39;</span><span class="p">][</span><span class="n">lsx</span> <span class="o">+</span> <span class="n">lse</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ddf</span><span class="p">[</span><span class="s1">&#39;Fig5a&#39;</span><span class="p">][</span><span class="n">lse</span><span class="p">]</span>
 </pre></div>
 
     </div>
@@ -14803,7 +14803,7 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ddf</span><span class="p">[</span><span class="s1">&#39;Fig5b&#39;</span><span class="p">][</span><span class="n">lsx</span> <span class="o">+</span> <span class="n">lsv</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ddf</span><span class="p">[</span><span class="s1">&#39;Fig5b&#39;</span><span class="p">][</span><span class="n">lsv</span><span class="p">]</span>
 </pre></div>
 
     </div>
@@ -14981,7 +14981,7 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ddf</span><span class="p">[</span><span class="s1">&#39;Fig5b&#39;</span><span class="p">][</span><span class="n">lsx</span> <span class="o">+</span> <span class="n">lse</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ddf</span><span class="p">[</span><span class="s1">&#39;Fig5b&#39;</span><span class="p">][</span><span class="n">lse</span><span class="p">]</span>
 </pre></div>
 
     </div>
@@ -15208,7 +15208,7 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ddf</span><span class="p">[</span><span class="s1">&#39;Fig5c&#39;</span><span class="p">][</span><span class="n">lsx</span> <span class="o">+</span> <span class="n">lsv</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ddf</span><span class="p">[</span><span class="s1">&#39;Fig5c&#39;</span><span class="p">][</span><span class="n">lsv</span><span class="p">]</span>
 </pre></div>
 
     </div>
@@ -15404,7 +15404,7 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ddf</span><span class="p">[</span><span class="s1">&#39;Fig5c&#39;</span><span class="p">][</span><span class="n">lsx</span> <span class="o">+</span> <span class="n">lse</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ddf</span><span class="p">[</span><span class="s1">&#39;Fig5c&#39;</span><span class="p">][</span><span class="n">lse</span><span class="p">]</span>
 </pre></div>
 
     </div>
@@ -15655,7 +15655,7 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ddf</span><span class="p">[</span><span class="s1">&#39;Fig5d&#39;</span><span class="p">][</span><span class="n">lsx</span> <span class="o">+</span> <span class="n">lsv</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ddf</span><span class="p">[</span><span class="s1">&#39;Fig5d&#39;</span><span class="p">][</span><span class="n">lsv</span><span class="p">]</span>
 </pre></div>
 
     </div>
@@ -15878,7 +15878,7 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ddf</span><span class="p">[</span><span class="s1">&#39;Fig5d&#39;</span><span class="p">][</span><span class="n">lsx</span> <span class="o">+</span> <span class="n">lse</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ddf</span><span class="p">[</span><span class="s1">&#39;Fig5d&#39;</span><span class="p">][</span><span class="n">lse</span><span class="p">]</span>
 </pre></div>
 
     </div>
@@ -16165,7 +16165,7 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ddf</span><span class="p">[</span><span class="s1">&#39;Fig5e&#39;</span><span class="p">][</span><span class="n">lsx</span> <span class="o">+</span> <span class="n">lsv</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ddf</span><span class="p">[</span><span class="s1">&#39;Fig5e&#39;</span><span class="p">][</span><span class="n">lsv</span><span class="p">]</span>
 </pre></div>
 
     </div>
@@ -16397,7 +16397,7 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ddf</span><span class="p">[</span><span class="s1">&#39;Fig5e&#39;</span><span class="p">][</span><span class="n">lsx</span> <span class="o">+</span> <span class="n">lse</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ddf</span><span class="p">[</span><span class="s1">&#39;Fig5e&#39;</span><span class="p">][</span><span class="n">lse</span><span class="p">]</span>
 </pre></div>
 
     </div>
