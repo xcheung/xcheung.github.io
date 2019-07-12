@@ -17399,161 +17399,16 @@ Returned dictionaries
 <div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dfs</span><span class="p">[</span><span class="s1">&#39;Fig5a&#39;</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">add_sys_frac</span><span class="p">(</span><span class="n">df</span><span class="p">)</span> <span class="p">:</span>
+    <span class="sd">&#39;&#39;&#39;Add relative systematic uncertainty</span>
+<span class="sd">Added df label</span>
+<span class="sd">- sysr : sys / value&#39;&#39;&#39;</span>
+
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;sysr&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;sys&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">df</span>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[30]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>low</th>
-      <th>high</th>
-      <th>value</th>
-      <th>stat</th>
-      <th>sys</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>2.0</td>
-      <td>2.5</td>
-      <td>705743.4696</td>
-      <td>4654.851030</td>
-      <td>29932.980072</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>2.5</td>
-      <td>3.0</td>
-      <td>312232.7336</td>
-      <td>3149.678923</td>
-      <td>10215.224674</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>3.0</td>
-      <td>3.5</td>
-      <td>161555.6359</td>
-      <td>2333.073405</td>
-      <td>4321.936371</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>3.5</td>
-      <td>4.0</td>
-      <td>86786.2899</td>
-      <td>1707.607040</td>
-      <td>2103.118199</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>4.0</td>
-      <td>4.5</td>
-      <td>48317.4708</td>
-      <td>1287.206412</td>
-      <td>1073.841293</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>4.5</td>
-      <td>5.0</td>
-      <td>26927.9951</td>
-      <td>953.240256</td>
-      <td>575.852483</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>5.0</td>
-      <td>5.5</td>
-      <td>18245.9000</td>
-      <td>807.151177</td>
-      <td>356.074212</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>5.5</td>
-      <td>6.0</td>
-      <td>11043.3000</td>
-      <td>620.253570</td>
-      <td>212.542665</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>6.0</td>
-      <td>7.0</td>
-      <td>6053.8550</td>
-      <td>327.834410</td>
-      <td>95.650909</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>7.0</td>
-      <td>8.0</td>
-      <td>2355.4900</td>
-      <td>152.363928</td>
-      <td>73.020190</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>8.0</td>
-      <td>10.0</td>
-      <td>856.8643</td>
-      <td>64.588542</td>
-      <td>26.562792</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>10.0</td>
-      <td>13.0</td>
-      <td>234.5653</td>
-      <td>28.238382</td>
-      <td>7.271525</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>13.0</td>
-      <td>20.0</td>
-      <td>24.7064</td>
-      <td>5.151640</td>
-      <td>0.765900</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
 </div>
 </div>
 
@@ -17563,7 +17418,7 @@ Returned dictionaries
 <div class="prompt input_prompt">In&nbsp;[31]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dfs</span><span class="p">[</span><span class="s1">&#39;Fig5b&#39;</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">add_sys_frac</span><span class="p">(</span><span class="n">dfs</span><span class="p">[</span><span class="s1">&#39;Fig5a&#39;</span><span class="p">])</span>
 </pre></div>
 
     </div>
@@ -17604,6 +17459,7 @@ Returned dictionaries
       <th>value</th>
       <th>stat</th>
       <th>sys</th>
+      <th>sysr</th>
     </tr>
   </thead>
   <tbody>
@@ -17611,105 +17467,118 @@ Returned dictionaries
       <th>0</th>
       <td>2.0</td>
       <td>2.5</td>
-      <td>804445.1636</td>
-      <td>4503.042692</td>
-      <td>46696.271967</td>
+      <td>705743.4696</td>
+      <td>4654.851030</td>
+      <td>29932.980072</td>
+      <td>0.042413</td>
     </tr>
     <tr>
       <th>1</th>
       <td>2.5</td>
       <td>3.0</td>
-      <td>384028.0524</td>
-      <td>3281.573471</td>
-      <td>17016.206194</td>
+      <td>312232.7336</td>
+      <td>3149.678923</td>
+      <td>10215.224674</td>
+      <td>0.032717</td>
     </tr>
     <tr>
       <th>2</th>
       <td>3.0</td>
       <td>3.5</td>
-      <td>197810.8836</td>
-      <td>2428.642905</td>
-      <td>6715.798186</td>
+      <td>161555.6359</td>
+      <td>2333.073405</td>
+      <td>4321.936371</td>
+      <td>0.026752</td>
     </tr>
     <tr>
       <th>3</th>
       <td>3.5</td>
       <td>4.0</td>
-      <td>106067.1842</td>
-      <td>1832.013619</td>
-      <td>2924.346516</td>
+      <td>86786.2899</td>
+      <td>1707.607040</td>
+      <td>2103.118199</td>
+      <td>0.024233</td>
     </tr>
     <tr>
       <th>4</th>
       <td>4.0</td>
       <td>4.5</td>
-      <td>60014.5701</td>
-      <td>1399.857853</td>
-      <td>1492.838426</td>
+      <td>48317.4708</td>
+      <td>1287.206412</td>
+      <td>1073.841293</td>
+      <td>0.022225</td>
     </tr>
     <tr>
       <th>5</th>
       <td>4.5</td>
       <td>5.0</td>
-      <td>37859.5876</td>
-      <td>1127.254077</td>
-      <td>868.922967</td>
+      <td>26927.9951</td>
+      <td>953.240256</td>
+      <td>575.852483</td>
+      <td>0.021385</td>
     </tr>
     <tr>
       <th>6</th>
       <td>5.0</td>
       <td>5.5</td>
-      <td>22430.0000</td>
-      <td>869.797269</td>
-      <td>465.052405</td>
+      <td>18245.9000</td>
+      <td>807.151177</td>
+      <td>356.074212</td>
+      <td>0.019515</td>
     </tr>
     <tr>
       <th>7</th>
       <td>5.5</td>
       <td>6.0</td>
-      <td>15332.6000</td>
-      <td>726.020076</td>
-      <td>304.802888</td>
+      <td>11043.3000</td>
+      <td>620.253570</td>
+      <td>212.542665</td>
+      <td>0.019246</td>
     </tr>
     <tr>
       <th>8</th>
       <td>6.0</td>
       <td>7.0</td>
-      <td>8620.8350</td>
-      <td>388.262580</td>
-      <td>136.209193</td>
+      <td>6053.8550</td>
+      <td>327.834410</td>
+      <td>95.650909</td>
+      <td>0.015800</td>
     </tr>
     <tr>
       <th>9</th>
       <td>7.0</td>
       <td>8.0</td>
-      <td>3396.8650</td>
-      <td>187.846974</td>
-      <td>105.302815</td>
+      <td>2355.4900</td>
+      <td>152.363928</td>
+      <td>73.020190</td>
+      <td>0.031000</td>
     </tr>
     <tr>
       <th>10</th>
       <td>8.0</td>
       <td>10.0</td>
-      <td>1482.8477</td>
-      <td>88.146105</td>
-      <td>45.968280</td>
+      <td>856.8643</td>
+      <td>64.588542</td>
+      <td>26.562792</td>
+      <td>0.031000</td>
     </tr>
     <tr>
       <th>11</th>
       <td>10.0</td>
       <td>13.0</td>
-      <td>343.8050</td>
-      <td>33.876104</td>
-      <td>10.657955</td>
+      <td>234.5653</td>
+      <td>28.238382</td>
+      <td>7.271525</td>
+      <td>0.031000</td>
     </tr>
     <tr>
       <th>12</th>
       <td>13.0</td>
       <td>20.0</td>
-      <td>39.8079</td>
-      <td>7.149701</td>
-      <td>1.234045</td>
+      <td>24.7064</td>
+      <td>5.151640</td>
+      <td>0.765900</td>
+      <td>0.031000</td>
     </tr>
   </tbody>
 </table>
@@ -17727,7 +17596,7 @@ Returned dictionaries
 <div class="prompt input_prompt">In&nbsp;[32]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dfs</span><span class="p">[</span><span class="s1">&#39;Fig5c&#39;</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">add_sys_frac</span><span class="p">(</span><span class="n">dfs</span><span class="p">[</span><span class="s1">&#39;Fig5b&#39;</span><span class="p">])</span>
 </pre></div>
 
     </div>
@@ -17768,6 +17637,7 @@ Returned dictionaries
       <th>value</th>
       <th>stat</th>
       <th>sys</th>
+      <th>sysr</th>
     </tr>
   </thead>
   <tbody>
@@ -17775,121 +17645,118 @@ Returned dictionaries
       <th>0</th>
       <td>2.0</td>
       <td>2.5</td>
-      <td>969595.7858</td>
-      <td>4794.631769</td>
-      <td>65654.336401</td>
+      <td>804445.1636</td>
+      <td>4503.042692</td>
+      <td>46696.271967</td>
+      <td>0.058048</td>
     </tr>
     <tr>
       <th>1</th>
       <td>2.5</td>
       <td>3.0</td>
-      <td>453698.0393</td>
-      <td>3454.996772</td>
-      <td>23447.114672</td>
+      <td>384028.0524</td>
+      <td>3281.573471</td>
+      <td>17016.206194</td>
+      <td>0.044310</td>
     </tr>
     <tr>
       <th>2</th>
       <td>3.0</td>
       <td>3.5</td>
-      <td>238292.8578</td>
-      <td>2611.356111</td>
-      <td>9081.602933</td>
+      <td>197810.8836</td>
+      <td>2428.642905</td>
+      <td>6715.798186</td>
+      <td>0.033951</td>
     </tr>
     <tr>
       <th>3</th>
       <td>3.5</td>
       <td>4.0</td>
-      <td>137745.9504</td>
-      <td>2064.205715</td>
-      <td>4026.575848</td>
+      <td>106067.1842</td>
+      <td>1832.013619</td>
+      <td>2924.346516</td>
+      <td>0.027571</td>
     </tr>
     <tr>
       <th>4</th>
       <td>4.0</td>
       <td>4.5</td>
-      <td>78835.6593</td>
-      <td>1582.420889</td>
-      <td>2096.429387</td>
+      <td>60014.5701</td>
+      <td>1399.857853</td>
+      <td>1492.838426</td>
+      <td>0.024875</td>
     </tr>
     <tr>
       <th>5</th>
       <td>4.5</td>
       <td>5.0</td>
-      <td>49383.0100</td>
-      <td>1270.837194</td>
-      <td>1218.673920</td>
+      <td>37859.5876</td>
+      <td>1127.254077</td>
+      <td>868.922967</td>
+      <td>0.022951</td>
     </tr>
     <tr>
       <th>6</th>
       <td>5.0</td>
       <td>5.5</td>
-      <td>31109.6000</td>
-      <td>1017.937222</td>
-      <td>649.126692</td>
+      <td>22430.0000</td>
+      <td>869.797269</td>
+      <td>465.052405</td>
+      <td>0.020734</td>
     </tr>
     <tr>
       <th>7</th>
       <td>5.5</td>
       <td>6.0</td>
-      <td>19771.1000</td>
-      <td>816.040290</td>
-      <td>409.538565</td>
+      <td>15332.6000</td>
+      <td>726.020076</td>
+      <td>304.802888</td>
+      <td>0.019879</td>
     </tr>
     <tr>
       <th>8</th>
       <td>6.0</td>
       <td>7.0</td>
-      <td>11382.7700</td>
-      <td>447.503358</td>
-      <td>179.847766</td>
+      <td>8620.8350</td>
+      <td>388.262580</td>
+      <td>136.209193</td>
+      <td>0.015800</td>
     </tr>
     <tr>
       <th>9</th>
       <td>7.0</td>
       <td>8.0</td>
-      <td>5491.0250</td>
-      <td>244.832724</td>
-      <td>170.221775</td>
+      <td>3396.8650</td>
+      <td>187.846974</td>
+      <td>105.302815</td>
+      <td>0.031000</td>
     </tr>
     <tr>
       <th>10</th>
       <td>8.0</td>
       <td>10.0</td>
-      <td>2277.5175</td>
-      <td>109.704146</td>
-      <td>70.603043</td>
+      <td>1482.8477</td>
+      <td>88.146105</td>
+      <td>45.968280</td>
+      <td>0.031000</td>
     </tr>
     <tr>
       <th>11</th>
       <td>10.0</td>
-      <td>12.0</td>
-      <td>733.8500</td>
-      <td>62.021626</td>
-      <td>22.749350</td>
+      <td>13.0</td>
+      <td>343.8050</td>
+      <td>33.876104</td>
+      <td>10.657955</td>
+      <td>0.031000</td>
     </tr>
     <tr>
       <th>12</th>
-      <td>12.0</td>
-      <td>14.0</td>
-      <td>331.0450</td>
-      <td>41.633543</td>
-      <td>10.262395</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>14.0</td>
-      <td>16.5</td>
-      <td>121.9084</td>
-      <td>22.260328</td>
-      <td>3.779160</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>16.5</td>
+      <td>13.0</td>
       <td>20.0</td>
-      <td>46.2497</td>
-      <td>11.217207</td>
-      <td>1.433739</td>
+      <td>39.8079</td>
+      <td>7.149701</td>
+      <td>1.234045</td>
+      <td>0.031000</td>
     </tr>
   </tbody>
 </table>
@@ -17907,7 +17774,7 @@ Returned dictionaries
 <div class="prompt input_prompt">In&nbsp;[33]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dfs</span><span class="p">[</span><span class="s1">&#39;Fig5d&#39;</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">add_sys_frac</span><span class="p">(</span><span class="n">dfs</span><span class="p">[</span><span class="s1">&#39;Fig5c&#39;</span><span class="p">])</span>
 </pre></div>
 
     </div>
@@ -17948,6 +17815,7 @@ Returned dictionaries
       <th>value</th>
       <th>stat</th>
       <th>sys</th>
+      <th>sysr</th>
     </tr>
   </thead>
   <tbody>
@@ -17955,145 +17823,136 @@ Returned dictionaries
       <th>0</th>
       <td>2.0</td>
       <td>2.5</td>
-      <td>1.105347e+06</td>
-      <td>4668.821730</td>
-      <td>90443.395203</td>
+      <td>969595.7858</td>
+      <td>4794.631769</td>
+      <td>65654.336401</td>
+      <td>0.067713</td>
     </tr>
     <tr>
       <th>1</th>
       <td>2.5</td>
       <td>3.0</td>
-      <td>5.559222e+05</td>
-      <td>3609.731024</td>
-      <td>31975.647096</td>
+      <td>453698.0393</td>
+      <td>3454.996772</td>
+      <td>23447.114672</td>
+      <td>0.051680</td>
     </tr>
     <tr>
       <th>2</th>
       <td>3.0</td>
       <td>3.5</td>
-      <td>3.030286e+05</td>
-      <td>2796.248218</td>
-      <td>12739.111575</td>
+      <td>238292.8578</td>
+      <td>2611.356111</td>
+      <td>9081.602933</td>
+      <td>0.038111</td>
     </tr>
     <tr>
       <th>3</th>
       <td>3.5</td>
       <td>4.0</td>
-      <td>1.713825e+05</td>
-      <td>2195.769555</td>
-      <td>5484.428087</td>
+      <td>137745.9504</td>
+      <td>2064.205715</td>
+      <td>4026.575848</td>
+      <td>0.029232</td>
     </tr>
     <tr>
       <th>4</th>
       <td>4.0</td>
       <td>4.5</td>
-      <td>1.020559e+05</td>
-      <td>1733.501542</td>
-      <td>2790.494764</td>
+      <td>78835.6593</td>
+      <td>1582.420889</td>
+      <td>2096.429387</td>
+      <td>0.026592</td>
     </tr>
     <tr>
       <th>5</th>
       <td>4.5</td>
       <td>5.0</td>
-      <td>5.957895e+04</td>
-      <td>1336.242568</td>
-      <td>1568.296607</td>
+      <td>49383.0100</td>
+      <td>1270.837194</td>
+      <td>1218.673920</td>
+      <td>0.024678</td>
     </tr>
     <tr>
       <th>6</th>
       <td>5.0</td>
       <td>5.5</td>
-      <td>4.079930e+04</td>
-      <td>1141.715371</td>
-      <td>938.747014</td>
+      <td>31109.6000</td>
+      <td>1017.937222</td>
+      <td>649.126692</td>
+      <td>0.020866</td>
     </tr>
     <tr>
       <th>7</th>
       <td>5.5</td>
       <td>6.0</td>
-      <td>2.472850e+04</td>
-      <td>878.690155</td>
-      <td>544.736708</td>
+      <td>19771.1000</td>
+      <td>816.040290</td>
+      <td>409.538565</td>
+      <td>0.020714</td>
     </tr>
     <tr>
       <th>8</th>
       <td>6.0</td>
       <td>7.0</td>
-      <td>1.494625e+04</td>
-      <td>491.695754</td>
-      <td>236.150750</td>
+      <td>11382.7700</td>
+      <td>447.503358</td>
+      <td>179.847766</td>
+      <td>0.015800</td>
     </tr>
     <tr>
       <th>9</th>
       <td>7.0</td>
       <td>8.0</td>
-      <td>7.906690e+03</td>
-      <td>288.135597</td>
-      <td>245.107390</td>
+      <td>5491.0250</td>
+      <td>244.832724</td>
+      <td>170.221775</td>
+      <td>0.031000</td>
     </tr>
     <tr>
       <th>10</th>
       <td>8.0</td>
-      <td>9.0</td>
-      <td>4.426260e+03</td>
-      <td>214.453182</td>
-      <td>137.214060</td>
+      <td>10.0</td>
+      <td>2277.5175</td>
+      <td>109.704146</td>
+      <td>70.603043</td>
+      <td>0.031000</td>
     </tr>
     <tr>
       <th>11</th>
-      <td>9.0</td>
       <td>10.0</td>
-      <td>2.390655e+03</td>
-      <td>154.963213</td>
-      <td>74.110305</td>
+      <td>12.0</td>
+      <td>733.8500</td>
+      <td>62.021626</td>
+      <td>22.749350</td>
+      <td>0.031000</td>
     </tr>
     <tr>
       <th>12</th>
-      <td>10.0</td>
-      <td>11.0</td>
-      <td>1.252480e+03</td>
-      <td>112.025193</td>
-      <td>38.826880</td>
+      <td>12.0</td>
+      <td>14.0</td>
+      <td>331.0450</td>
+      <td>41.633543</td>
+      <td>10.262395</td>
+      <td>0.031000</td>
     </tr>
     <tr>
       <th>13</th>
-      <td>11.0</td>
-      <td>12.0</td>
-      <td>7.948490e+02</td>
-      <td>88.316467</td>
-      <td>24.640319</td>
+      <td>14.0</td>
+      <td>16.5</td>
+      <td>121.9084</td>
+      <td>22.260328</td>
+      <td>3.779160</td>
+      <td>0.031000</td>
     </tr>
     <tr>
       <th>14</th>
-      <td>12.0</td>
-      <td>13.0</td>
-      <td>5.057350e+02</td>
-      <td>70.132801</td>
-      <td>15.677785</td>
-    </tr>
-    <tr>
-      <th>15</th>
-      <td>13.0</td>
-      <td>14.0</td>
-      <td>3.257860e+02</td>
-      <td>55.871973</td>
-      <td>10.099366</td>
-    </tr>
-    <tr>
-      <th>16</th>
-      <td>14.0</td>
-      <td>16.5</td>
-      <td>2.060454e+02</td>
-      <td>27.783162</td>
-      <td>6.387407</td>
-    </tr>
-    <tr>
-      <th>17</th>
       <td>16.5</td>
       <td>20.0</td>
-      <td>9.576600e+01</td>
-      <td>15.743830</td>
-      <td>2.968745</td>
+      <td>46.2497</td>
+      <td>11.217207</td>
+      <td>1.433739</td>
+      <td>0.031000</td>
     </tr>
   </tbody>
 </table>
@@ -18111,7 +17970,7 @@ Returned dictionaries
 <div class="prompt input_prompt">In&nbsp;[34]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dfs</span><span class="p">[</span><span class="s1">&#39;Fig5e&#39;</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">add_sys_frac</span><span class="p">(</span><span class="n">dfs</span><span class="p">[</span><span class="s1">&#39;Fig5d&#39;</span><span class="p">])</span>
 </pre></div>
 
     </div>
@@ -18125,6 +17984,229 @@ Returned dictionaries
 <div class="output_area">
 
     <div class="prompt output_prompt">Out[34]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>low</th>
+      <th>high</th>
+      <th>value</th>
+      <th>stat</th>
+      <th>sys</th>
+      <th>sysr</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2.0</td>
+      <td>2.5</td>
+      <td>1.105347e+06</td>
+      <td>4668.821730</td>
+      <td>90443.395203</td>
+      <td>0.081824</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2.5</td>
+      <td>3.0</td>
+      <td>5.559222e+05</td>
+      <td>3609.731024</td>
+      <td>31975.647096</td>
+      <td>0.057518</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3.0</td>
+      <td>3.5</td>
+      <td>3.030286e+05</td>
+      <td>2796.248218</td>
+      <td>12739.111575</td>
+      <td>0.042039</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3.5</td>
+      <td>4.0</td>
+      <td>1.713825e+05</td>
+      <td>2195.769555</td>
+      <td>5484.428087</td>
+      <td>0.032001</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4.0</td>
+      <td>4.5</td>
+      <td>1.020559e+05</td>
+      <td>1733.501542</td>
+      <td>2790.494764</td>
+      <td>0.027343</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>4.5</td>
+      <td>5.0</td>
+      <td>5.957895e+04</td>
+      <td>1336.242568</td>
+      <td>1568.296607</td>
+      <td>0.026323</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>5.0</td>
+      <td>5.5</td>
+      <td>4.079930e+04</td>
+      <td>1141.715371</td>
+      <td>938.747014</td>
+      <td>0.023009</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>5.5</td>
+      <td>6.0</td>
+      <td>2.472850e+04</td>
+      <td>878.690155</td>
+      <td>544.736708</td>
+      <td>0.022029</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>6.0</td>
+      <td>7.0</td>
+      <td>1.494625e+04</td>
+      <td>491.695754</td>
+      <td>236.150750</td>
+      <td>0.015800</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>7.0</td>
+      <td>8.0</td>
+      <td>7.906690e+03</td>
+      <td>288.135597</td>
+      <td>245.107390</td>
+      <td>0.031000</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>8.0</td>
+      <td>9.0</td>
+      <td>4.426260e+03</td>
+      <td>214.453182</td>
+      <td>137.214060</td>
+      <td>0.031000</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>9.0</td>
+      <td>10.0</td>
+      <td>2.390655e+03</td>
+      <td>154.963213</td>
+      <td>74.110305</td>
+      <td>0.031000</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>10.0</td>
+      <td>11.0</td>
+      <td>1.252480e+03</td>
+      <td>112.025193</td>
+      <td>38.826880</td>
+      <td>0.031000</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>11.0</td>
+      <td>12.0</td>
+      <td>7.948490e+02</td>
+      <td>88.316467</td>
+      <td>24.640319</td>
+      <td>0.031000</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>12.0</td>
+      <td>13.0</td>
+      <td>5.057350e+02</td>
+      <td>70.132801</td>
+      <td>15.677785</td>
+      <td>0.031000</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>13.0</td>
+      <td>14.0</td>
+      <td>3.257860e+02</td>
+      <td>55.871973</td>
+      <td>10.099366</td>
+      <td>0.031000</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>14.0</td>
+      <td>16.5</td>
+      <td>2.060454e+02</td>
+      <td>27.783162</td>
+      <td>6.387407</td>
+      <td>0.031000</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>16.5</td>
+      <td>20.0</td>
+      <td>9.576600e+01</td>
+      <td>15.743830</td>
+      <td>2.968745</td>
+      <td>0.031000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dfs</span><span class="p">[</span><span class="s1">&#39;Fig5e&#39;</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[35]:</div>
 
 
 
@@ -18320,7 +18402,7 @@ Returned dictionaries
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">dfs</span><span class="p">[</span><span class="s1">&#39;Fig6&#39;</span><span class="p">]</span>
@@ -18336,7 +18418,7 @@ Returned dictionaries
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[35]:</div>
+    <div class="prompt output_prompt">Out[36]:</div>
 
 
 
@@ -18540,7 +18622,7 @@ Returned dictionaries
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">dfs</span><span class="p">[</span><span class="s1">&#39;Fig7&#39;</span><span class="p">]</span>
@@ -18556,7 +18638,7 @@ Returned dictionaries
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[36]:</div>
+    <div class="prompt output_prompt">Out[37]:</div>
 
 
 
