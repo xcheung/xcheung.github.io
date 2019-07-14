@@ -13119,7 +13119,7 @@ div#notebook {
 <h1 id="Check-of-systematic-uncertainty">Check of systematic uncertainty<a class="anchor-link" href="#Check-of-systematic-uncertainty">&#182;</a></h1><ul>
 <li>Input<ul>
 <li>The last data (root) files used to produce figs in the paper from Zuman on 7 July 2019</li>
-<li>Systematic uncertainty sources (root) file from Zuman on 11 July, 2019</li>
+<li>Systematic uncertainty source (root) files from Zuman on 11 July, 2019</li>
 </ul>
 </li>
 <li>All previous discussions: <a href="https://xcheung.github.io">xcheung.github.io</a></li>
@@ -13127,21 +13127,36 @@ div#notebook {
 <h2 id="Table-of-content">Table of content<a class="anchor-link" href="#Table-of-content">&#182;</a></h2><ul>
 <li>Executive conclusion</li>
 <li>Uncertainty propagation in each rapidity interval</li>
-<li>Uncertainty propagation for each source</li>
+<li>Uncertainty propagation for each source in the given rapidity interval</li>
 <li>Appendix: the new HEPData dumped from the (root) files used to produce the figures in the paper</li>
 </ul>
-<h2 id="Executive-conclusion">Executive conclusion<a class="anchor-link" href="#Executive-conclusion">&#182;</a></h2><h3 id="Uncertainty-propagation-in-each-rapidity-interval">Uncertainty propagation in each rapidity interval<a class="anchor-link" href="#Uncertainty-propagation-in-each-rapidity-interval">&#182;</a></h3><ul>
+<h2 id="Executive-conclusion">Executive conclusion<a class="anchor-link" href="#Executive-conclusion">&#182;</a></h2><h3 id="Uncertainty-propagation-in-each-rapidity-interval">Uncertainty propagation in each rapidity interval<a class="anchor-link" href="#Uncertainty-propagation-in-each-rapidity-interval">&#182;</a></h3><h4 id="13-July-2019">13 July 2019<a class="anchor-link" href="#13-July-2019">&#182;</a></h4><ul>
 <li>Discrepancy on uncertainty propagation is improved with the new inputs</li>
 <li>Still visible differences in the sub-rapidities<ul>
-<li>See the discussion "Pre-problem" on <a href="https://xcheung.github.io/sandbox/d20190612.html">12 June 2019</a></li>
+<li>See the discussion of "Pre-problem" on <a href="https://xcheung.github.io/sandbox/d20190612.html">12 June 2019</a></li>
 <li>It is never improved in the new uncertainty source (root) files</li>
 </ul>
 </li>
 </ul>
-<h3 id="Uncertainty-propagation-for-each-source">Uncertainty propagation for each source<a class="anchor-link" href="#Uncertainty-propagation-for-each-source">&#182;</a></h3><ul>
-<li>As discussed many time, at least the uncertainty propagation for decay muon subtraction has to be follow a linear approach</li>
+<h4 id="14-July-2019">14 July 2019<a class="anchor-link" href="#14-July-2019">&#182;</a></h4><ul>
+<li>Discrepancy improved by using the corrected uncertainty in sub-rapidity bins</li>
+<li>It is cased by<ul>
+<li>The discussion of "Pre-problem" on <a href="https://xcheung.github.io/sandbox/d20190612.html">12 June 2019</a></li>
+<li>The values in the uncertainty source (root) files are NOT fully updated</li>
+</ul>
+</li>
+</ul>
+<h4 id="Conclusion">Conclusion<a class="anchor-link" href="#Conclusion">&#182;</a></h4><ul>
+<li>In each rapidity interval, the total uncertainty is consistent with the propagation from sources after updating the one on the detector response</li>
+</ul>
+<h3 id="Uncertainty-propagation-for-each-source-in-the-given-rapidity-interval">Uncertainty propagation for each source in the given rapidity interval<a class="anchor-link" href="#Uncertainty-propagation-for-each-source-in-the-given-rapidity-interval">&#182;</a></h3><h4 id="13-July-2019">13 July 2019<a class="anchor-link" href="#13-July-2019">&#182;</a></h4><ul>
+<li>As discussed many times, at least the uncertainty propagation for decay muon subtraction has to follow a linear approach</li>
 <li>And we almost converged that the uncertainty propagation for other sources, at least for J/$\psi$ and W decay muons should also follow the linear approach</li>
 <li><strong>But this is not the case</strong></li>
+</ul>
+<h4 id="14-July-2019">14 July 2019<a class="anchor-link" href="#14-July-2019">&#182;</a></h4><ul>
+<li>After updating the uncertainty on detector response, its propagation from sub-rapidities to the total rapidity follows the expectation (see Out[14])</li>
+<li>But other uncertainty sources (see Out[9] - Out[13]) are not followed the expectation as discussed previously</li>
 </ul>
 <h2 id="Uncertainty-propagation-in-each-rapidity-interval">Uncertainty propagation in each rapidity interval<a class="anchor-link" href="#Uncertainty-propagation-in-each-rapidity-interval">&#182;</a></h2>
 </div>
@@ -13853,14 +13868,14 @@ Labels of df
       <td>7.0</td>
       <td>8.0</td>
       <td>77.690656</td>
-      <td>46.617353</td>
-      <td>-39.996191</td>
+      <td>78.230683</td>
+      <td>0.695100</td>
       <td>9.609705e+00</td>
       <td>7.760266e+00</td>
       <td>0.000000</td>
       <td>24.791003</td>
       <td>0.355350</td>
-      <td>37.216742</td>
+      <td>73.020190</td>
       <td>4.561077</td>
     </tr>
     <tr>
@@ -13868,14 +13883,14 @@ Labels of df
       <td>8.0</td>
       <td>10.0</td>
       <td>28.458261</td>
-      <td>16.958146</td>
-      <td>-40.410464</td>
+      <td>28.458230</td>
+      <td>-0.000110</td>
       <td>3.495754e+00</td>
       <td>2.822977e+00</td>
       <td>0.000000</td>
       <td>9.018304</td>
       <td>0.129267</td>
-      <td>13.538455</td>
+      <td>26.562792</td>
       <td>1.659198</td>
     </tr>
     <tr>
@@ -14115,14 +14130,14 @@ Labels of df
       <td>7.0</td>
       <td>8.0</td>
       <td>112.208981</td>
-      <td>66.201984</td>
-      <td>-41.001172</td>
+      <td>112.209031</td>
+      <td>0.000044</td>
       <td>18.973102</td>
       <td>15.299944</td>
       <td>0.000000</td>
       <td>28.188449</td>
       <td>0.375039</td>
-      <td>53.670467</td>
+      <td>105.302815</td>
       <td>10.648357</td>
     </tr>
     <tr>
@@ -14130,14 +14145,14 @@ Labels of df
       <td>8.0</td>
       <td>10.0</td>
       <td>49.131343</td>
-      <td>28.899430</td>
-      <td>-41.179238</td>
+      <td>48.983080</td>
+      <td>-0.301769</td>
       <td>8.282408</td>
       <td>6.678949</td>
       <td>0.000000</td>
       <td>12.305222</td>
       <td>0.163717</td>
-      <td>23.428994</td>
+      <td>45.968280</td>
       <td>4.648372</td>
     </tr>
     <tr>
@@ -14377,14 +14392,14 @@ Labels of df
       <td>7.0</td>
       <td>8.0</td>
       <td>187.933625</td>
-      <td>117.773784</td>
-      <td>-37.332245</td>
+      <td>187.933851</td>
+      <td>0.000120</td>
       <td>31.948879</td>
       <td>26.141426</td>
       <td>0.000000</td>
       <td>33.657439</td>
       <td>0.223457</td>
-      <td>86.758195</td>
+      <td>170.221775</td>
       <td>59.217410</td>
     </tr>
     <tr>
@@ -14669,14 +14684,14 @@ Labels of df
       <td>7.0</td>
       <td>8.0</td>
       <td>268.576027</td>
-      <td>166.318818</td>
-      <td>-38.073841</td>
+      <td>268.576155</td>
+      <td>0.000048</td>
       <td>46.917489</td>
       <td>49.750083</td>
       <td>0.000000</td>
       <td>39.437329</td>
       <td>0.315068</td>
-      <td>124.925702</td>
+      <td>245.107390</td>
       <td>76.313791</td>
     </tr>
     <tr>
@@ -15165,7 +15180,7 @@ Labels of df
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Uncertainty-propagation-for-each-source">Uncertainty propagation for each source<a class="anchor-link" href="#Uncertainty-propagation-for-each-source">&#182;</a></h2>
+<h2 id="Uncertainty-propagation-for-each-source-in-the-given-rapidity-interval">Uncertainty propagation for each source in the given rapidity interval<a class="anchor-link" href="#Uncertainty-propagation-for-each-source-in-the-given-rapidity-interval">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -16498,24 +16513,24 @@ Labels of df
       <th>9</th>
       <td>7.0</td>
       <td>8.0</td>
-      <td>-31.792044</td>
-      <td>624.497581</td>
+      <td>-0.000017</td>
+      <td>915.578645</td>
       <td>915.578800</td>
-      <td>37.216742</td>
-      <td>53.670467</td>
-      <td>86.758195</td>
-      <td>124.925702</td>
+      <td>73.020190</td>
+      <td>105.302815</td>
+      <td>170.221775</td>
+      <td>245.107390</td>
       <td>321.926475</td>
     </tr>
     <tr>
       <th>10</th>
       <td>8.0</td>
       <td>10.0</td>
-      <td>-9.300722</td>
-      <td>693.619784</td>
+      <td>0.000036</td>
+      <td>764.747029</td>
       <td>764.746750</td>
-      <td>27.076910</td>
-      <td>46.857989</td>
+      <td>53.125584</td>
+      <td>91.936560</td>
       <td>141.206085</td>
       <td>211.324365</td>
       <td>267.154435</td>
